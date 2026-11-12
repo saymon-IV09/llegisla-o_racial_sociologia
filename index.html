@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Racismo no Brasil: a lei, a história e a luta por igualdade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--preto:#0c0c0c;--grafite:#1f1e1c;--grafite2:#2b2925;--bege:#e9dfcf;--branco:#faf7f2;--terra:#9a3f1e;--terra-c:#e08a62;--ouro:#c9a24b;--tx-d:#ece4d6;--tx-l:#1a1816;
+--serif:'Bricolage Grotesque','Arial Black',system-ui,sans-serif;--sans:'Newsreader',Georgia,'Times New Roman',serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--preto);color:var(--tx-d);font:1.15rem/1.65 var(--sans);-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:var(--serif);line-height:1.08;margin:0 0 .6em;font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,6vw,3.2rem)}h3{font-size:1.3rem;font-weight:600}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ouro);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:5rem 0;position:relative}
+.dk{background:var(--preto)}.gr{background:var(--grafite);box-shadow:0 -18px 36px rgba(0,0,0,.5)}
+.lt{background:var(--bege);color:var(--tx-l);box-shadow:0 -18px 36px rgba(0,0,0,.5),inset 0 12px 18px rgba(0,0,0,.12)}.lt h2,.lt h3{color:#14110f}.lt .sub{color:var(--terra)}
+.sub{color:var(--ouro);font-family:var(--serif);font-weight:600;font-size:1.05rem;margin-bottom:.4rem}
+.lead{font-size:1.2rem;max-width:56ch}
+.mark{border-left:4px solid var(--ouro);padding:.4rem 0 .4rem 1rem;font-family:var(--serif);font-size:1.15rem;font-weight:600;max-width:60ch;margin:1.5rem 0}
+.lt .mark{border-color:var(--terra)}
+/* nav */
+header{position:sticky;top:0;z-index:20;background:rgba(12,12,12,.94);backdrop-filter:blur(8px);border-bottom:1px solid #3a372f;padding-top:env(safe-area-inset-top,0px);margin-top:calc(-1 * env(safe-area-inset-top,0px))}
+header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:56px}
+.logo{font-family:var(--serif);font-weight:800;text-decoration:none;color:var(--ouro)}
+nav ul{list-style:none;margin:0;padding:0;display:none;gap:1.2rem}
+nav a{text-decoration:none;font-size:.95rem;padding:.5rem .2rem}nav a:hover{color:var(--ouro)}
+#mb{background:none;border:1px solid var(--ouro);color:var(--ouro);padding:.55rem .9rem;border-radius:4px;font:inherit;min-height:44px;cursor:pointer}
+nav.open ul{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:100%;background:var(--preto);padding:1rem 1.25rem;border-bottom:1px solid #3a372f}
+#bar{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:linear-gradient(90deg,var(--terra-c),var(--ouro))}
+@media(min-width:860px){#mb{display:none}nav ul{display:flex}}
+/* hero */
+.hero{min-height:88vh;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 85% 15%,rgba(201,162,75,.18),transparent 45%),var(--preto)}
+.hero h1{font-size:clamp(2.3rem,8.5vw,5.2rem);max-width:15ch;color:var(--branco);transform-style:preserve-3d;transition:transform .2s ease-out}
+.hero .frase{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ouro);max-width:44ch;border-left:4px solid var(--terra-c);padding-left:1rem;margin:1.6rem 0}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
+.btn{display:inline-block;padding:.85rem 1.4rem;min-height:48px;border-radius:4px;font-weight:600;text-decoration:none;border:2px solid var(--ouro);transition:transform .2s,background .2s,color .2s}
+.btn.p{background:var(--ouro);color:#14110f}.btn:hover{transform:translateY(-3px)}.btn:not(.p):hover{background:rgba(201,162,75,.15)}
+.anos{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin-top:3rem;font-family:var(--serif);font-weight:800;font-size:clamp(1.2rem,4vw,1.8rem);color:#4a463d}
+.anos a{text-decoration:none;transition:color .2s}.anos a:hover{color:var(--ouro)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;padding:2.5rem 0;border-top:1px solid #3a372f;border-bottom:1px solid #3a372f}
+.stats b{display:block;font-family:var(--serif);font-size:3rem;color:var(--ouro);line-height:1}
+.stats span{font-size:.95rem}
+/* cards */
+.grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:2rem}
+.card{background:var(--branco);border:1px solid #cdbfa6;border-top:5px solid var(--terra);padding:1.4rem;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.card p{margin-bottom:.7em;font-size:1rem}
+.card em{font-size:.95rem;color:#4a4339}
+/* timeline */
+.tl{position:relative;margin-top:2.5rem;padding-left:2.2rem;background:linear-gradient(#4a463d,#4a463d) .55rem 0/3px 100% no-repeat}
+.tl::before{content:"";position:absolute;left:.55rem;top:0;bottom:0;width:3px;background:linear-gradient(var(--ouro),var(--terra-c));transform-origin:top;transform:scaleY(var(--p,0));box-shadow:0 0 14px rgba(201,162,75,.8)}
+.tli{position:relative;margin-bottom:1rem}
+.tli::before{content:"";position:absolute;left:-2.05rem;top:1.25rem;width:15px;height:15px;border-radius:50%;background:var(--preto);border:3px solid var(--ouro)}
+.tli.on::before{background:var(--ouro);animation:pulse 2s infinite}
+.tli>button{width:100%;text-align:left;background:var(--grafite2);color:inherit;border:1px solid #4a463d;padding:1rem 1.1rem;display:flex;gap:1rem;align-items:baseline;cursor:pointer;font:inherit;min-height:56px;transition:border-color .2s,background .2s}
+.tli>button:hover{border-color:var(--ouro);background:#34312b}
+.tli .y{font-family:var(--serif);font-weight:800;font-size:1.7rem;color:var(--ouro)}
+.tli .t{font-weight:600}
+.tli .pn{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.tli.on .pn{grid-template-rows:1fr}
+.tli .pn>div{overflow:hidden}
+.tli .in{background:var(--branco);color:var(--tx-l);padding:1.2rem 1.2rem .6rem;border:1px solid #cdbfa6;border-top:0}
+.tli ul{padding-left:1.2rem;margin:0 0 1rem}.tli li{margin-bottom:.4rem}
+.tli blockquote{margin:0 0 1rem;font-family:var(--serif);font-weight:600;border-left:4px solid var(--terra);padding-left:1rem}
+.tli .d{font-weight:600;background:#f1e4cf;padding:.8rem 1rem;border-left:4px solid var(--terra);margin-bottom:1rem}
+/* pratica */
+.sit{background:var(--grafite2);border:1px solid #4a463d;padding:1.3rem;display:flex;flex-direction:column;align-items:flex-start;gap:.8rem}
+.sit h3{color:var(--ouro);margin:0}.sit p{margin:0;font-size:1rem}
+.sit button{background:none;border:2px solid var(--terra-c);color:var(--terra-c);padding:.6rem 1rem;min-height:44px;font:inherit;font-weight:600;cursor:pointer;border-radius:4px}
+.sit button:hover{background:var(--terra-c);color:#14110f}
+.sit .ex{display:none;border-top:1px dashed #6b655a;padding-top:.8rem}.sit.on .ex{display:block}
+.lei3{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:1.5rem 0}
+.lei3 div{border:1px solid #4a463d;padding:1.1rem;background:var(--grafite2)}.lei3 b{display:block;font-family:var(--serif);color:var(--ouro);margin-bottom:.4rem}
+/* quiz */
+.qz{background:var(--branco);border:1px solid #cdbfa6;border-top:5px solid var(--terra);padding:1.4rem;max-width:720px;margin-top:2rem}
+.qz .n{color:var(--terra);font-weight:600}.qz h3{margin:.3rem 0 1rem}
+.op{display:block;width:100%;text-align:left;margin-bottom:.6rem;padding:.85rem 1rem;min-height:48px;font:inherit;color:var(--tx-l);background:#fff;border:2px solid #cdbfa6;border-radius:4px;cursor:pointer}
+.op:hover:not(:disabled){border-color:var(--terra)}
+.op.ok{border-color:#1f7a3d;background:#e3f3e8}.op.no{border-color:#a52a2a;background:#f8e3e3}
+.fb{margin:1rem 0;padding:.8rem 1rem;background:#f1e4cf;border-left:4px solid var(--terra);display:none}
+.nx{background:var(--terra);color:#fff;border:0;padding:.8rem 1.4rem;min-height:48px;font:inherit;font-weight:600;border-radius:4px;cursor:pointer;display:none}
+.nx:hover{background:#7d3217}
+/* acoes */
+.ac{list-style:none;padding:0;margin:2rem 0;display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.ac li{border:1px solid #4a463d;border-left:4px solid var(--ouro);padding:1rem 1.1rem;background:var(--grafite2)}
+.fim{font-family:var(--serif);font-weight:800;font-size:clamp(1.5rem,4.5vw,2.4rem);max-width:24ch;line-height:1.2;margin-top:2.5rem;color:var(--ouro)}
+.ref{padding-left:1.2rem}.ref li{margin-bottom:.6rem}.ref a{color:var(--terra);font-weight:600}
+footer{background:var(--preto);border-top:3px solid var(--ouro);padding:2rem 0 2.5rem;font-size:.95rem}
+footer b{font-family:var(--serif)}
+/* reveal */
+.hero .wrap{position:relative;z-index:1;perspective:1000px}
+.hero h1{text-shadow:1px 1px 0 #8a6a1c,2px 2px 0 #7d6019,3px 3px 0 #705516,4px 4px 0 #634b13,5px 5px 0 #564110,6px 6px 0 #49360d,0 22px 30px rgba(0,0,0,.7)}
+.w{display:inline-block;transform-origin:50% 100%;animation:flip 1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*110ms + .2s)}
+.orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0;animation:bob 8s ease-in-out infinite}
+.o1{width:min(52vw,400px);aspect-ratio:1;right:-8%;top:6%;background:radial-gradient(circle at 30% 28%,#f2a982,#9a3f1e 55%,#240d05);box-shadow:0 40px 70px rgba(0,0,0,.65);opacity:.85}
+.o2{width:min(30vw,210px);aspect-ratio:1;left:58%;bottom:6%;border:7px solid var(--ouro);box-shadow:0 18px 30px rgba(0,0,0,.6),inset 0 0 30px rgba(201,162,75,.45);animation-duration:6s}
+.o3{width:min(14vw,90px);aspect-ratio:1;left:6%;top:12%;background:radial-gradient(circle at 30% 30%,#f5dc91,#c9a24b 55%,#5c4510);box-shadow:0 14px 24px rgba(0,0,0,.6);animation-duration:9s}
+@media(max-width:700px){.o1{opacity:.5}}
+@keyframes flip{from{opacity:0;transform:perspective(600px) rotateX(-85deg) translateY(40px)}}
+.fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.fxo{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
+.hero .lead,.hero .frase{text-shadow:0 2px 10px rgba(0,0,0,.85)}.hero .frase{color:#f3d98f}
+#agir{overflow:hidden}#agir .wrap{position:relative;z-index:1}
+#pratica::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle 260px at var(--mx,-999px) var(--my,-999px),rgba(224,138,98,.16),transparent 70%)}
+.sit{background-image:radial-gradient(circle 170px at var(--cx,-999px) var(--cy,-999px),rgba(201,162,75,.2),transparent)}
+@keyframes bob{50%{translate:0 -18px}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(201,162,75,.8)}100%{box-shadow:0 0 0 14px rgba(201,162,75,0)}}
+@keyframes pop{40%{transform:scale(1.04)}}
+@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.dk h2,.gr h2{text-shadow:2px 2px 0 #7d3217,4px 4px 0 #4a1f0d,0 12px 24px rgba(0,0,0,.6)}
+.lt h2{text-shadow:2px 2px 0 rgba(154,63,30,.28),0 10px 16px rgba(0,0,0,.2)}
+.stats b{text-shadow:2px 2px 0 #6b5518,4px 4px 0 #3f320e,0 10px 18px rgba(0,0,0,.6)}
+.tli .y{text-shadow:2px 2px 0 #6b5518,4px 4px 0 #3f320e}
+.tli .in{transform-origin:top;transform:perspective(800px) rotateX(-14deg);transition:transform .5s ease;box-shadow:0 16px 30px rgba(0,0,0,.4)}
+.tli.on .in{transform:none}
+.card,.sit,.lei3 div,.ac li{box-shadow:0 14px 28px rgba(0,0,0,.3)}
+.sit,.lei3 div,.ac li{transition:transform .2s ease-out,box-shadow .2s}
+.btn.p{box-shadow:0 6px 0 #7a5f1e,0 14px 22px rgba(0,0,0,.5)}
+.btn.p:active{transform:translateY(4px);box-shadow:0 2px 0 #7a5f1e}
+.qz{box-shadow:0 22px 40px rgba(0,0,0,.28),0 5px 0 #9a3f1e}
+.op.ok{animation:pop .5s}.op.no{animation:shake .45s}
+.rv{opacity:0;transform:perspective(900px) translateY(50px) rotateX(18deg) scale(.96);transform-origin:50% 100%;transition:opacity .8s ease,transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--dl,0s)}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap"><a class="logo" href="#topo">Racismo no Brasil</a>
+<nav id="nv" aria-label="Principal"><button id="mb" aria-expanded="false" aria-controls="menu">Menu</button>
+<ul id="menu"><li><a href="#entenda">Entenda</a></li><li><a href="#linha">Linha do tempo</a></li><li><a href="#religiao">Religião</a></li><li><a href="#pratica">Na prática</a></li><li><a href="#quiz">Quiz</a></li><li><a href="#agir">O que fazer</a></li><li><a href="#fontes">Fontes</a></li></ul></nav></div>
+<div id="bar" role="presentation"></div>
+</header>
+
+<main id="topo">
+<section class="hero"><canvas class="fx" id="g1" aria-hidden="true"></canvas><div class="orb o1" data-d=".5"></div><div class="orb o2" data-d="1"></div><div class="orb o3" data-d="1.6"></div><div class="wrap">
+<h1>Racismo no Brasil: a lei, a história e a luta por igualdade</h1>
+<p class="frase">“Conhecer as leis é um passo importante para reconhecer direitos, combater a discriminação e construir uma sociedade mais justa.”</p>
+<p class="lead">O racismo no Brasil tem raízes históricas profundas e continua presente nas relações sociais, nas instituições e nas oportunidades oferecidas à população. Este site mostra como as leis brasileiras evoluíram para enfrentá-lo.</p>
+<div class="btns"><a class="btn p" href="#linha">Conheça a legislação</a><a class="btn" href="#entenda">Entenda o problema</a></div>
+<div class="anos" aria-label="Marcos da legislação"><a href="#linha">1951</a><a href="#linha">1988</a><a href="#linha">1989</a><a href="#linha">2003</a><a href="#linha">2023</a></div>
+<div class="stats">
+<div><b data-to="5">0</b><span>marcos legais no percurso apresentado</span></div>
+<div><b id="anos" data-to="75">0</b><span>anos desde a Lei Afonso Arinos, de 1951</span></div>
+<div><b data-to="3">0</b><span>normas que protegem a liberdade religiosa, apresentadas neste site</span></div>
+</div></div></section>
+
+<section id="entenda" class="lt"><div class="wrap">
+<p class="sub">Entenda o racismo</p>
+<h2 class="rv">O racismo tem várias formas</h2>
+<p class="lead rv">Ele nem sempre aparece como uma ofensa direta. Muitas vezes está nas regras, nos hábitos e nas oportunidades que algumas pessoas têm e outras não.</p>
+<div class="grid">
+<article class="card rv"><h3>Racismo individual</h3><p>Atitudes, ofensas e comportamentos discriminatórios de uma pessoa contra outra por causa de sua raça ou cor.</p><em>Exemplo: um colega que faz piadas sobre a cor da pele de outro na escola.</em></article>
+<article class="card rv"><h3>Racismo institucional</h3><p>Práticas e estruturas dentro de instituições que produzem ou mantêm desigualdades raciais, mesmo sem se dizerem racistas.</p><em>Exemplo: um processo seletivo em que candidatos negros são sistematicamente deixados de lado.</em></article>
+<article class="card rv"><h3>Racismo estrutural</h3><p>Desigualdade racial que se mantém nas estruturas sociais, econômicas, políticas e culturais e influencia oportunidades e condições de vida.</p><em>Exemplo: pessoas seguidas por seguranças em lojas ou tratadas com desconfiança em espaços públicos.</em></article>
+<article class="card rv"><h3>Preconceito e discriminação</h3><p>Preconceito é formar um julgamento sobre alguém antes de conhecê-lo. Discriminação é agir de forma desigual com a pessoa por causa desse julgamento.</p><em>Exemplo: pensar mal de alguém é preconceito; negar-lhe uma vaga ou um atendimento é discriminação.</em></article>
+</div></div></section>
+
+<section id="linha" class="gr"><div class="wrap">
+<p class="sub">Linha do tempo</p>
+<h2 class="rv">A evolução da legislação</h2>
+<p class="lead">Toque em cada marco para ler os detalhes.</p>
+<div class="tl" id="tl"></div>
+</div></section>
+
+<section id="religiao" class="lt"><div class="wrap">
+<p class="sub">Intolerância religiosa e racismo</p>
+<h2 class="rv">Crença também é um direito</h2>
+<h3>O que é intolerância religiosa?</h3>
+<p>É a discriminação, o desrespeito ou a violência praticada contra pessoas por causa de suas crenças, práticas ou religiões.</p>
+<h3>Qual é a relação com o racismo?</h3>
+<p>Religiões de matriz africana, como o Candomblé e a Umbanda, são frequentemente alvo de preconceito por causa de sua origem e de suas tradições culturais. Por isso, a intolerância contra elas também pode manifestar formas de racismo religioso.</p>
+<h3>O que diz a legislação?</h3>
+<div class="grid">
+<article class="card"><h3>Constituição, art. 5º, VI</h3><p>Garante a liberdade de consciência e de crença e protege o livre exercício dos cultos religiosos.</p></article>
+<article class="card"><h3>Lei nº 7.716/1989, art. 20</h3><p>Prevê punição para práticas de discriminação ou preconceito por motivo de religião, entre outros.</p></article>
+<article class="card"><h3>Código Penal, art. 208</h3><p>Trata dos crimes contra o sentimento religioso, incluindo condutas que desrespeitam ou perturbam o exercício de cultos.</p></article>
+</div>
+<h3 style="margin-top:2rem">Exemplos de intolerância religiosa</h3>
+<p>Ataques a locais de culto, discriminação contra praticantes de religiões afro-brasileiras e desrespeito a símbolos religiosos.</p>
+<p class="mark">A liberdade religiosa é um direito de todos. Respeitar uma religião também significa respeitar as pessoas que fazem parte dela.</p>
+</div></section>
+
+<section id="pratica" class="dk"><div class="wrap">
+<p class="sub">Na prática</p>
+<h2 class="rv">Como a legislação protege as pessoas?</h2>
+<p class="lead">São situações fictícias do dia a dia. Toque em “Ver a proteção legal” para ler a explicação.</p>
+<div class="grid" id="sits"></div>
+</div></section>
+
+<section id="quiz" class="lt"><div class="wrap">
+<p class="sub">Quiz</p>
+<h2 class="rv">Teste seus conhecimentos</h2>
+<div class="qz" id="qz" aria-live="polite"></div>
+</div></section>
+
+<section id="agir" class="gr"><canvas class="fx" id="g2" aria-hidden="true"></canvas><div class="wrap">
+<p class="sub">Atitudes</p>
+<h2 class="rv">O que podemos fazer para combater o racismo?</h2>
+<ul class="ac">
+<li>Respeitar as diferenças culturais, raciais e religiosas.</li>
+<li>Não reproduzir piadas, expressões ou atitudes racistas.</li>
+<li>Valorizar a história e a cultura afro-brasileira.</li>
+<li>Reconhecer e denunciar práticas discriminatórias.</li>
+<li>Incentivar a educação e o diálogo sobre igualdade racial.</li>
+<li>Não se omitir diante de situações de discriminação.</li>
+</ul>
+<p class="fim rv">“Uma sociedade mais justa não se constrói apenas com leis, mas também com consciência, respeito e atitudes.”</p>
+</div></section>
+
+<section id="fontes" class="lt"><div class="wrap">
+<p class="sub">Fontes e referências</p>
+<h2>Consulte os textos oficiais</h2>
+<p>Os textos legais devem ser conferidos em suas versões oficiais e atualizadas.</p>
+<ol class="ref">
+<li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm" target="_blank" rel="noopener">Constituição Federal de 1988 (Portal do Planalto)</a></li>
+<li><a href="https://www.planalto.gov.br/ccivil_03/leis/1950-1969/l1390.htm" target="_blank" rel="noopener">Lei nº 1.390/1951: Lei Afonso Arinos</a></li>
+<li><a href="https://www.planalto.gov.br/ccivil_03/leis/l7716.htm" target="_blank" rel="noopener">Lei nº 7.716/1989: Lei do Racismo</a></li>
+<li><a href="https://www.planalto.gov.br/ccivil_03/leis/2003/l10.639.htm" target="_blank" rel="noopener">Lei nº 10.639/2003: ensino da História e Cultura Afro-Brasileira</a></li>
+<li><a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14532.htm" target="_blank" rel="noopener">Lei nº 14.532/2023: racismo e injúria racial</a></li>
+<li><a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm" target="_blank" rel="noopener">Código Penal Brasileiro, artigo 208</a></li>
+<li><a href="https://www.ibge.gov.br" target="_blank" rel="noopener">Instituto Brasileiro de Geografia e Estatística (IBGE)</a></li>
+<li><a href="https://www.gov.br/palmares" target="_blank" rel="noopener">Fundação Cultural Palmares</a></li>
+</ol></div></section>
+</main>
+
+<footer><div class="wrap">
+<b>Trabalho de Sociologia — Racismo no Brasil</b>
+<p style="margin:.3rem 0">Tema: Legislação e combate à discriminação racial.</p>
+<p style="margin:0;color:var(--ouro)">“Conhecimento é uma ferramenta de transformação social.”</p>
+</div></footer>
+
+<script>
+const T=[
+{y:1951,t:"Lei Afonso Arinos (Lei nº 1.390/1951)",p:["Foi uma das primeiras iniciativas brasileiras de combate à discriminação racial.","Tornou certas práticas de discriminação por raça ou cor contravenções penais.","Foi um avanço para a época, pois reconheceu legalmente que a discriminação racial existe.","Tinha alcance limitado: essas práticas ainda não recebiam o tratamento penal mais rigoroso que viria depois."],d:"Foi um primeiro passo importante no reconhecimento legal da discriminação racial no Brasil."},
+{y:1988,t:"Constituição Federal",q:"O racismo constitui crime inafiançável e imprescritível, sujeito à pena de reclusão, nos termos da lei. (art. 5º, XLII)",p:["Inafiançável: não admite liberdade provisória mediante pagamento de fiança.","Imprescritível: o Estado não perde o direito de punir só porque o tempo passou.","A Constituição estabeleceu uma proteção mais forte contra o racismo.","Todos são iguais perante a lei, sem distinção de qualquer natureza."],d:"A Constituição colocou o combate ao racismo entre as bases do Estado brasileiro."},
+{y:1989,t:"Lei Caó (Lei nº 7.716/1989)",p:["Regulamentou o combate ao racismo e definiu os crimes resultantes de preconceito de raça, cor, etnia, religião ou procedência nacional.","Tornou a punição das práticas discriminatórias mais específica.","Abrange, por exemplo, impedir o acesso de alguém a estabelecimentos, empregos ou serviços por motivo discriminatório.","O nome homenageia o deputado Carlos Alberto Caó de Oliveira."],d:"A legislação passou a definir com mais clareza quais práticas discriminatórias constituem crimes."},
+{y:2003,t:"Lei nº 10.639/2003",p:["Alterou a Lei de Diretrizes e Bases da Educação Nacional (LDB).","Tornou obrigatório o ensino de história e cultura afro-brasileira e africana nas escolas públicas e privadas de ensino fundamental e médio.","Valoriza a contribuição da população negra para a formação do Brasil e inclui o estudo da história da África e dos africanos.","Aborda a luta da população negra e valoriza a cultura negra brasileira.","Inclui o dia 20 de novembro no calendário escolar como Dia Nacional da Consciência Negra."],d:"O combate ao racismo também acontece pela educação, pelo conhecimento histórico e pela valorização da cultura afro-brasileira."},
+{y:2023,t:"Lei nº 14.532/2023",p:["Passou a tipificar a injúria racial como crime de racismo, incorporando essa conduta à Lei nº 7.716/1989.","Reforçou o tratamento jurídico das ofensas racistas.","Também trouxe mudanças relacionadas ao combate à discriminação e ao preconceito."],d:"O combate ao racismo continua evoluindo por meio de mudanças na legislação."}];
+const S=[
+["Discriminação no trabalho","Uma pessoa deixa de ser contratada por causa de sua cor de pele.","A discriminação racial no acesso ao emprego pode configurar crime previsto na Lei nº 7.716/1989."],
+["Injúria racial","Uma pessoa sofre uma ofensa relacionada à sua raça ou cor.","A Lei nº 14.532/2023 estabeleceu o tratamento da injúria racial como crime de racismo."],
+["Intolerância religiosa","Uma pessoa é discriminada por praticar uma religião de matriz africana.","A Constituição protege a liberdade religiosa, e a legislação penal prevê punição para práticas discriminatórias por motivo de religião."],
+["Educação antirracista","Uma escola desenvolve atividades sobre história africana, cultura afro-brasileira e a contribuição da população negra para o país.","Essas ações estão relacionadas ao cumprimento da Lei nº 10.639/2003."]];
+const Q=[
+["Qual foi a importância da Lei Afonso Arinos?",["Tornou o racismo inafiançável e imprescritível","Foi uma das primeiras leis a reconhecer legalmente a discriminação racial, tratando-a como contravenção penal","Criou o Dia Nacional da Consciência Negra","Tornou obrigatório o ensino de história africana"],1,"A lei de 1951 foi um primeiro passo: reconheceu legalmente a discriminação racial, embora com alcance limitado."],
+["O que estabelece o artigo 5º, inciso XLII, da Constituição?",["Que o racismo é crime inafiançável e imprescritível","Que o racismo é apenas uma contravenção","Que o crime de racismo prescreve em 20 anos","Que só a injúria racial é crime"],0,"Inafiançável significa sem liberdade provisória por fiança; imprescritível significa que o tempo não apaga o direito de punir."],
+["Qual é o objetivo da Lei nº 7.716/1989?",["Regulamentar o calendário escolar","Definir os crimes resultantes de preconceito de raça, cor, etnia, religião ou procedência nacional","Criar a Fundação Cultural Palmares","Proibir qualquer religião"],1,"A Lei Caó deixou claro quais condutas discriminatórias são crime."],
+["O que a Lei nº 10.639/2003 tornou obrigatório?",["O ensino de língua estrangeira","O ensino de história e cultura afro-brasileira e africana nas escolas","A abertura de novas escolas","O fim das provas escolares"],1,"Ela alterou a LDB e vale para escolas públicas e privadas de ensino fundamental e médio."],
+["Qual é a relação entre intolerância religiosa e racismo?",["Nenhuma: são temas sem ligação","Religiões de matriz africana costumam sofrer preconceito por sua origem e tradições, e isso pode ser racismo religioso","Só existe intolerância contra religiões de origem europeia","A lei não protege nenhuma religião"],1,"O preconceito contra Candomblé e Umbanda muitas vezes tem relação com a origem cultural dessas religiões."]];
+const $=s=>document.querySelector(s),RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* timeline */
+$("#tl").innerHTML=T.map((e,i)=>`<div class="tli rv${i?"":" on"}"><button aria-expanded="${!i}" aria-controls="p${i}"><span class="y">${e.y}</span><span class="t">${e.t}</span></button><div class="pn" id="p${i}" role="region"><div><div class="in">${e.q?`<blockquote>“${e.q}”</blockquote>`:""}<ul>${e.p.map(x=>`<li>${x}</li>`).join("")}</ul><p class="d">${e.d}</p></div></div></div></div>`).join("");
+document.querySelectorAll(".tli>button").forEach(b=>b.onclick=()=>{const li=b.parentElement,o=li.classList.toggle("on");b.setAttribute("aria-expanded",o)});
+/* situações */
+$("#sits").innerHTML=S.map((s,i)=>`<article class="sit rv"><h3>${s[0]}</h3><p>${s[1]}</p><button aria-expanded="false">Ver a proteção legal</button><p class="ex">${s[2]}</p></article>`).join("");
+document.querySelectorAll(".sit button").forEach(b=>b.onclick=()=>{const c=b.parentElement,o=c.classList.toggle("on");b.setAttribute("aria-expanded",o);b.textContent=o?"Ocultar":"Ver a proteção legal"});
+/* quiz */
+let qi=0,pts=0;
+function qShow(){const q=Q[qi],z=$("#qz");z.innerHTML=`<div class="n">Pergunta ${qi+1} de ${Q.length}</div><h3>${q[0]}</h3>${q[1].map((o,i)=>`<button class="op" data-i="${i}">${o}</button>`).join("")}<div class="fb" id="fb"></div><button class="nx" id="nx">${qi<Q.length-1?"Próxima pergunta":"Ver resultado"}</button>`;
+z.querySelectorAll(".op").forEach(b=>b.onclick=()=>{const i=+b.dataset.i,ok=i===q[2];if(ok)pts++;const br=b.getBoundingClientRect();sp(ok?"conf":"dust",br.left+br.width/2,br.top+br.height/2,ok?40:16);z.querySelectorAll(".op").forEach((x,k)=>{x.disabled=true;if(k===q[2])x.classList.add("ok");else if(k===i)x.classList.add("no")});const f=$("#fb");f.style.display="block";f.innerHTML=`<b>${ok?"Você acertou.":"Não foi dessa vez."}</b> ${q[3]}`;$("#nx").style.display="inline-block";$("#nx").focus()});
+$("#nx").onclick=()=>{qi++;qi<Q.length?qShow():qEnd()}}
+function qEnd(){const m=pts>=4?"Excelente! Você conhece bem a legislação e pode ajudar a compartilhar esse conhecimento.":pts>=2?"Bom começo! Releia a linha do tempo e tente de novo para fixar o que aprendeu.":"Todo aprendizado começa em algum lugar. Releia as seções do site e tente novamente.";
+$("#qz").innerHTML=`<div class="n">Resultado</div><h3>Você acertou ${pts} de ${Q.length} perguntas</h3><p>${m}</p><button class="nx" style="display:inline-block" id="rs">Refazer o quiz</button>`;$("#rs").onclick=()=>{qi=0;pts=0;qShow()}}
+qShow();
+/* menu */
+const nv=$("#nv"),mb=$("#mb");mb.onclick=()=>{const o=nv.classList.toggle("open");mb.setAttribute("aria-expanded",o)};
+document.querySelectorAll("#menu a").forEach(a=>a.onclick=()=>{nv.classList.remove("open");mb.setAttribute("aria-expanded","false")});
+/* progresso */
+const bar=$("#bar");function pg(){const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+"%"}
+addEventListener("scroll",pg,{passive:true});pg();
+/* anos e contadores */
+$("#anos").dataset.to=new Date().getFullYear()-1951;
+function cnt(el){const to=+el.dataset.to;if(RM){el.textContent=to;return}const t0=performance.now();(function f(t){const k=Math.min((t-t0)/1200,1);el.textContent=Math.round(to*k);if(k<1)requestAnimationFrame(f)})(t0)}
+/* revelação */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const t=e.target;t.classList.add("in");io.unobserve(t);setTimeout(()=>t.classList.remove("rv","in"),1800)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(e=>{const s=[...e.parentElement.children].filter(c=>c.classList.contains("rv"));e.style.setProperty("--dl",(s.indexOf(e)%4)*.13+"s");io.observe(e)});
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){cnt(e.target);io2.unobserve(e.target)}}));
+document.querySelectorAll("[data-to]").forEach(e=>io2.observe(e));
+/* profundidade 3D */
+const h=$(".hero h1"),hero=$(".hero"),orbs=[...document.querySelectorAll(".orb")];
+h.innerHTML=h.textContent.split(" ").map((w,i)=>`<span class="w" style="--i:${i}">${w}</span>`).join(" ");
+let mx=0,my=0;function par(){orbs.forEach(o=>{const d=+o.dataset.d;o.style.transform=`translate3d(${mx*d*50}px,${my*d*50-scrollY*d*.35}px,0)`})}
+if(!RM){addEventListener("scroll",par,{passive:true});hero.addEventListener("pointermove",e=>{if(e.pointerType!=="mouse")return;const r=hero.getBoundingClientRect();mx=(e.clientX-r.left)/r.width-.5;my=(e.clientY-r.top)/r.height-.5;par();h.style.transform=`rotateY(${mx*8}deg) rotateX(${-my*8}deg)`});hero.addEventListener("pointerleave",()=>{mx=my=0;par();h.style.transform=""});par();
+document.querySelectorAll(".card,.sit,.lei3 div,.ac li").forEach(c=>{c.addEventListener("pointermove",e=>{if(e.pointerType!=="mouse")return;const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(700px) rotateY(${x*12}deg) rotateX(${-y*12}deg) translateZ(14px)`});c.addEventListener("pointerleave",()=>c.style.transform="")})}
+const tl=$("#tl");function tp(){const r=tl.getBoundingClientRect();tl.style.setProperty("--p",RM?1:Math.min(Math.max((innerHeight*.65-r.top)/r.height,0),1))}addEventListener("scroll",tp,{passive:true});tp();
+/* shaders (WebGL) */
+const VS="attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
+const FS=`precision mediump float;uniform vec2 r,m,c;uniform float t,ct,k;
+float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1.,0.)),f.x),mix(h(i+vec2(0.,1.)),h(i+vec2(1.)),f.x),f.y);}
+float fb(vec2 p){float s=0.,a=.5;for(int i=0;i<4;i++){s+=a*n(p);p*=2.;a*=.5;}return s;}
+void main(){float as=r.x/r.y;vec2 p=(gl_FragCoord.xy/r-.5)*vec2(as,1.),mp=(m-.5)*vec2(as,1.),cp=(c-.5)*vec2(as,1.);
+vec2 dv=p-mp;float d=length(dv);p+=dv/(d+.05)*.09*exp(-d*3.);
+vec2 q=p*2.2+vec2(fb(p*2.+t*.07),fb(p*2.-t*.07+4.));float f=fb(q+t*.05);
+vec3 col=mix(vec3(.04,.035,.03),vec3(.55,.22,.1),smoothstep(.3,.62,f));
+col=mix(col,vec3(.85,.66,.28),smoothstep(.58,.8,f));
+col+=vec3(.9,.6,.25)*exp(-d*4.)*.35;
+float dc=length(p-cp),w=ct*.5;
+col+=vec3(.9,.7,.3)*sin((dc-w)*40.)*exp(-ct*1.8)*exp(-abs(dc-w)*10.)*.8;
+gl_FragColor=vec4(col*k,1.);}`;
+function sh(cv,host,k){if(RM)return;const g=cv.getContext("webgl",{antialias:false,alpha:false});if(!g)return;
+const mk=(ty,s)=>{const o=g.createShader(ty);g.shaderSource(o,s);g.compileShader(o);return o},pr=g.createProgram();
+g.attachShader(pr,mk(g.VERTEX_SHADER,VS));g.attachShader(pr,mk(g.FRAGMENT_SHADER,FS));g.linkProgram(pr);if(!g.getProgramParameter(pr,g.LINK_STATUS))return;g.useProgram(pr);
+const b=g.createBuffer();g.bindBuffer(g.ARRAY_BUFFER,b);g.bufferData(g.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),g.STATIC_DRAW);const a=g.getAttribLocation(pr,"p");g.enableVertexAttribArray(a);g.vertexAttribPointer(a,2,g.FLOAT,false,0,0);
+const U=n=>g.getUniformLocation(pr,n),u={r:U("r"),m:U("m"),c:U("c"),t:U("t"),ct:U("ct"),k:U("k")};
+let on=false,run=false,tm=[.7,.6],mo=[.7,.6],cl=[.5,.5],c0=-1;
+function fr(now){if(!on){run=false;return}const w=Math.max(2,host.clientWidth*.5|0),hh=Math.max(2,host.clientHeight*.5|0);if(cv.width!==w||cv.height!==hh){cv.width=w;cv.height=hh}g.viewport(0,0,w,hh);
+mo[0]+=(tm[0]-mo[0])*.08;mo[1]+=(tm[1]-mo[1])*.08;
+g.uniform2f(u.r,w,hh);g.uniform2f(u.m,mo[0],mo[1]);g.uniform2f(u.c,cl[0],cl[1]);g.uniform1f(u.t,now/1000);g.uniform1f(u.ct,c0<0?99:(now-c0)/1000);g.uniform1f(u.k,k);g.drawArrays(g.TRIANGLES,0,3);requestAnimationFrame(fr)}
+const pos=e=>{const r=host.getBoundingClientRect();if(e.clientY<r.top||e.clientY>r.bottom)return null;return[(e.clientX-r.left)/r.width,1-(e.clientY-r.top)/r.height]};
+addEventListener("pointermove",e=>{const p=pos(e);if(p)tm=p});
+addEventListener("pointerdown",e=>{const p=pos(e);if(p){tm=p;cl=p;c0=performance.now()}});
+new IntersectionObserver(es=>{const v=es[0].isIntersecting;if(v){on=true;if(!run){run=true;requestAnimationFrame(fr)}}else on=false}).observe(host)}
+sh($("#g1"),hero,.55);sh($("#g2"),$("#agir"),.4);
+/* efeitos de mouse por contexto */
+const fx=document.createElement("canvas");fx.className="fxo";fx.setAttribute("aria-hidden","true");document.body.appendChild(fx);const cx=fx.getContext("2d");let P=[],on2=false;
+function rz(){fx.width=innerWidth;fx.height=innerHeight}rz();addEventListener("resize",rz);
+const R=(a,b)=>a+Math.random()*(b-a);
+function sp(ty,x,y,n=1){if(RM)return;for(let i=0;i<n;i++){const p={ty,x,y,l:1,vx:0,vy:0};
+if(ty==="ink"){p.s=R(3,8);p.d=.022;p.c="154,63,30";p.vx=R(-1.2,1.2);p.vy=R(-1.2,1.2)}
+else if(ty==="spark"){p.s=R(1.5,3.5);p.vx=R(-1.6,1.6);p.vy=R(-3,-.5);p.d=.02;p.c="255,205,110";p.add=1}
+else if(ty==="mote"){p.s=R(2,5);p.vx=R(-.3,.3);p.vy=R(-.9,-.3);p.d=.012;p.c="176,112,40";p.ph=R(0,6)}
+else if(ty==="conf"){p.s=R(6,10);p.vx=R(-6,6);p.vy=R(-11,-3);p.d=.011;p.c=["201,162,75","224,138,98","31,122,61","154,63,30"][i%4];p.rot=R(0,6);p.vr=R(-.3,.3)}
+else if(ty==="dust"){p.s=R(3,6);p.vx=R(-2,2);p.vy=R(-1,1);p.d=.03;p.c="165,42,42"}
+else{p.s=4+i*14;p.d=.018;p.c="201,162,75";p.add=1}
+P.push(p)}if(!on2){on2=true;requestAnimationFrame(lp2)}}
+function lp2(){cx.clearRect(0,0,fx.width,fx.height);P=P.filter(p=>p.l>0);
+for(const p of P){p.l-=p.d;p.x+=p.vx;p.y+=p.vy;const a=Math.max(p.l,0);cx.globalCompositeOperation=p.add?"lighter":"source-over";
+if(p.ty==="conf"){p.vy+=.28;p.vx*=.99;p.rot+=p.vr;cx.save();cx.translate(p.x,p.y);cx.rotate(p.rot);cx.fillStyle=`rgba(${p.c},${a})`;cx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);cx.restore()}
+else if(p.ty==="ring"){p.s+=3.2;cx.strokeStyle=`rgba(${p.c},${a})`;cx.lineWidth=2;cx.beginPath();cx.arc(p.x,p.y,p.s,0,6.283);cx.stroke()}
+else{if(p.ty==="mote")p.x+=Math.sin(p.l*9+p.ph)*.5;if(p.ty==="dust")p.vy+=.15;if(p.ty==="spark")p.vy+=.03;cx.fillStyle=`rgba(${p.c},${a*(p.ty==="mote"?.6:.9)})`;cx.beginPath();cx.arc(p.x,p.y,Math.max(p.s*(p.ty==="ink"?a:.5+a/2),.3),0,6.283);cx.fill()}}
+if(P.length)requestAnimationFrame(lp2);else on2=false}
+const TR={entenda:["ink",.5],linha:["spark",1],religiao:["mote",.4]},BU={entenda:["ink",10],linha:["spark",16],religiao:["mote",8],agir:["ring",2]};
+addEventListener("pointermove",e=>{if(RM)return;const s=e.target.closest&&e.target.closest("section");if(!s)return;
+if(s.id==="pratica"){const r=s.getBoundingClientRect();s.style.setProperty("--mx",e.clientX-r.left+"px");s.style.setProperty("--my",e.clientY-r.top+"px");const c=e.target.closest(".sit");if(c){const q=c.getBoundingClientRect();c.style.setProperty("--cx",e.clientX-q.left+"px");c.style.setProperty("--cy",e.clientY-q.top+"px")}}
+if(e.pointerType!=="mouse")return;const c=TR[s.id];if(c&&Math.random()<c[1])sp(c[0],e.clientX,e.clientY)});
+addEventListener("pointerdown",e=>{const s=e.target.closest&&e.target.closest("section"),c=s&&BU[s.id];if(c)sp(c[0],e.clientX,e.clientY,c[1])});
+</script>
+</body>
+</html>
